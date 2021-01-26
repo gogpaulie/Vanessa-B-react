@@ -258,7 +258,7 @@ const Projects3 = () => {
           <h1>Twitch Avatars</h1>
           <ImageGallery
             items={imagesAvatars}
-            thumbnailPosition='right'
+            thumbnailPosition='bottom'
             autoPlay={true}
             slideInterval={5000}
           />

@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Vanessa-Brasfield-react/static/css/main.eb546dd8.chunk.css",
-    "main.js": "/Vanessa-Brasfield-react/static/js/main.7c5c20cd.chunk.js",
-    "main.js.map": "/Vanessa-Brasfield-react/static/js/main.7c5c20cd.chunk.js.map",
-    "runtime-main.js": "/Vanessa-Brasfield-react/static/js/runtime-main.8853bff8.js",
-    "runtime-main.js.map": "/Vanessa-Brasfield-react/static/js/runtime-main.8853bff8.js.map",
-    "static/js/2.3ac45be0.chunk.js": "/Vanessa-Brasfield-react/static/js/2.3ac45be0.chunk.js",
-    "static/js/2.3ac45be0.chunk.js.map": "/Vanessa-Brasfield-react/static/js/2.3ac45be0.chunk.js.map",
-    "index.html": "/Vanessa-Brasfield-react/index.html",
-    "static/css/main.eb546dd8.chunk.css.map": "/Vanessa-Brasfield-react/static/css/main.eb546dd8.chunk.css.map",
-    "static/js/2.3ac45be0.chunk.js.LICENSE.txt": "/Vanessa-Brasfield-react/static/js/2.3ac45be0.chunk.js.LICENSE.txt",
-    "static/media/funky.bd2bb5ad.jpg": "/Vanessa-Brasfield-react/static/media/funky.bd2bb5ad.jpg",
-    "static/media/logo.683d8a02.webp": "/Vanessa-Brasfield-react/static/media/logo.683d8a02.webp",
-    "static/media/simon.11129872.png": "/Vanessa-Brasfield-react/static/media/simon.11129872.png",
-    "static/media/vanessa.3839c6da.PNG": "/Vanessa-Brasfield-react/static/media/vanessa.3839c6da.PNG"
+    "main.css": "/static/css/main.eb546dd8.chunk.css",
+    "main.js": "/static/js/main.3b4ad859.chunk.js",
+    "main.js.map": "/static/js/main.3b4ad859.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.120840cb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.120840cb.js.map",
+    "static/js/2.26ef7009.chunk.js": "/static/js/2.26ef7009.chunk.js",
+    "static/js/2.26ef7009.chunk.js.map": "/static/js/2.26ef7009.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.eb546dd8.chunk.css.map": "/static/css/main.eb546dd8.chunk.css.map",
+    "static/js/2.26ef7009.chunk.js.LICENSE.txt": "/static/js/2.26ef7009.chunk.js.LICENSE.txt",
+    "static/media/funky.bd2bb5ad.jpg": "/static/media/funky.bd2bb5ad.jpg",
+    "static/media/logo.683d8a02.webp": "/static/media/logo.683d8a02.webp",
+    "static/media/simon.11129872.png": "/static/media/simon.11129872.png",
+    "static/media/vanessa.3839c6da.PNG": "/static/media/vanessa.3839c6da.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.8853bff8.js",
-    "static/js/2.3ac45be0.chunk.js",
+    "static/js/runtime-main.120840cb.js",
+    "static/js/2.26ef7009.chunk.js",
     "static/css/main.eb546dd8.chunk.css",
-    "static/js/main.7c5c20cd.chunk.js"
+    "static/js/main.3b4ad859.chunk.js"
   ]
 }

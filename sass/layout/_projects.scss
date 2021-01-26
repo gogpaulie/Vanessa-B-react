@@ -1,10 +1,19 @@
+$ig-med-screen: 1200px !default;
+$ig-small-screen: 768px !default;
+$ig-xsmall-screen: 480px !default;
+$ig-white: #fff !default;
+$ig-black: #000 !default;
+$ig-blue: #337ab7 !default;
+$ig-background-black: rgba(0, 0, 0, 0.4) !default;
+$ig-transparent: rgba(0, 0, 0, 0) !default;
+
 .projects {
   background-color: #04473d;
   color: white;
 
   &__header {
     font-size: 5rem;
-    margin-bottom: 5rem;
+    padding: 5rem 0;
     text-align: center;
   }
   &__info {
@@ -21,21 +30,56 @@
 }
 
 .gallery-container {
-  display: grid;
-  grid-template-columns: max-content max-content;
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
   gap: 5rem;
   justify-content: center;
   background-color: #04473d;
   color: white;
-}
 
-$ig-small-screen: 768px !default;
-$ig-xsmall-screen: 480px !default;
-$ig-white: #fff !default;
-$ig-black: #000 !default;
-$ig-blue: #337ab7 !default;
-$ig-background-black: rgba(0, 0, 0, 0.4) !default;
-$ig-transparent: rgba(0, 0, 0, 0) !default;
+  @media (max-width: $ig-med-screen) {
+    grid-template-columns: max-content;
+  }
+
+  &__gallery {
+    width: 500px;
+    // min-height: 500px;
+
+    @media (max-width: $ig-small-screen) {
+      width: 400px;
+      margin: 0 auto;
+    }
+    @media (max-width: $ig-xsmall-screen) {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    &--small {
+      width: 400px;
+      height: 300px;
+
+      @media (max-width: $ig-small-screen) {
+        width: 400px;
+        margin: 0 auto;
+      }
+      @media (max-width: $ig-xsmall-screen) {
+        width: 300px;
+        margin: 0 auto;
+      }
+    }
+
+    &:last-child {
+      margin: 20rem 0;
+    }
+  }
+
+  & h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 3rem 0;
+  }
+}
 
 @mixin vendor-prefix($name, $value) {
   @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {

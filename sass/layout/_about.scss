@@ -1,0 +1,81 @@
+$ig-med-screen: 1200px !default;
+$ig-small-screen: 768px !default;
+$ig-xsmall-screen: 480px !default;
+.about {
+  background-color: #222;
+  color: white;
+  padding-bottom: 10rem;
+
+  &__header {
+    font-size: 5rem;
+    padding: 5rem 0;
+    text-align: center;
+    color: white;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__card {
+    background-color: $color-primary;
+    box-shadow: 0 2px 10px rgba($color: #000000, $alpha: 0.5);
+    margin: 2rem;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    width: 325px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: transform 0.3s ease;
+
+    &--img-container {
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      position: relative;
+      border: 3px solid #222;
+      box-shadow: 0 2px 10px rgba($color: #000000, $alpha: 0.5);
+      @media (max-width: $ig-xsmall-screen) {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    &--img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+
+      &-funky {
+        top: -25px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &--author {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+      @media (max-width: $ig-xsmall-screen) {
+        font-size: 1.5rem;
+      }
+    }
+    &--desc {
+      font-size: 1.5rem;
+      flex: 1;
+
+      @media (max-width: $ig-xsmall-screen) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

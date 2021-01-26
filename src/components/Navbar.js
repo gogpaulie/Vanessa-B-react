@@ -1,82 +1,146 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState, useEffect } from 'react';
+import logo from '../assets/logo.webp';
 import AppBar from '@material-ui/core/AppBar';
+import Drawer from '@material-ui/core/Drawer';
 import Toolbar from '@material-ui/core/Toolbar';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Slide from '@material-ui/core/Slide';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
-import BrushIcon from '@material-ui/icons/Brush';
+import IconButton from '@material-ui/core/IconButton';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
+const headersData = [
+  {
+    label: 'Home',
+    href: '#home',
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
+  {
+    label: 'About',
+    href: '#about',
   },
-  title: {
-    flexGrow: 1,
+  {
+    label: 'Freelance',
+    href: '#projects',
   },
-}));
+  {
+    label: 'Contact',
+    href: '#contact',
+  },
+];
 
-function HideOnScroll(props) {
-  const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+const Navbar = ({ scrollActive }) => {
+  const [state, setState] = useState({
+    mobileView: false,
+    drawerOpen: false,
+  });
+  const { mobileView, drawerOpen } = state;
+
+  useEffect(() => {
+    const setResponsiveness = () => {
+      return window.innerWidth < 900
+        ? setState((prevState) => ({ ...prevState, mobileView: true }))
+        : setState((prevState) => ({ ...prevState, mobileView: false }));
+    };
+    setResponsiveness();
+    window.addEventListener('resize', () => setResponsiveness());
+  }, []);
+  const handleDrawerOpen = () =>
+    setState((prevState) => ({ ...prevState, drawerOpen: true }));
+  const handleDrawerClose = () =>
+    setState((prevState) => ({ ...prevState, drawerOpen: false }));
+
+  const getDrawerChoices = () => {
+    return headersData.map(({ label, href }) => {
+      return (
+        <a
+          className='nav__drawer-links'
+          href={href}
+          onClick={handleDrawerClose}
+          key={label}
+        >
+          <MenuItem>{label}</MenuItem>
+        </a>
+      );
+    });
+  };
+
+  const displayMobile = () => {
+    return (
+      <Toolbar className={scrollActive ? 'nav active' : 'nav'}>
+        <div
+          style={{
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          <div className='nav__logo'>
+            <a href='#home'>
+              <img src={logo} alt='logo' />
+            </a>
+          </div>
+          <IconButton
+            {...{
+              edge: 'start',
+              color: 'inherit',
+              'aria-label': 'menu',
+              'aria-haspopup': 'true',
+              onClick: handleDrawerOpen,
+            }}
+          >
+            <MenuIcon style={{ color: 'white', fontSize: '2rem' }} />
+          </IconButton>
+          <Drawer
+            {...{
+              anchor: 'left',
+
+              open: drawerOpen,
+              onClose: handleDrawerClose,
+            }}
+          >
+            <div>{getDrawerChoices()}</div>
+          </Drawer>
+        </div>
+      </Toolbar>
+    );
+  };
+
+  const displayDesktop = () => {
+    return (
+      <nav className={scrollActive ? 'nav active' : 'nav'}>
+        <div className='container'>
+          <div className='nav__logo'>
+            <a href='#home'>
+              <img src={logo} alt='logo' />
+            </a>
+          </div>
+          <ul>
+            <li>
+              <a href='#home'>Home</a>
+            </li>
+            <li>
+              <a href='#about'>About</a>
+            </li>
+            <li>
+              <a href='#projects'>Freelance</a>
+            </li>
+            <li>
+              <a href='#contact'>Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    );
+  };
 
   return (
-    <Slide appear={false} direction='down' in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
-
-HideOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-};
-
-const Navbar = (props) => {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      <HideOnScroll>
-        <AppBar position='fixed'>
-          <Toolbar>
-            <IconButton
-              edge='start'
-              className={classes.menuButton}
-              color='inherit'
-              aria-label='menu'
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography className={classes.title} variant='h6'>
-              News
-            </Typography>
-            <Button color='inherit' href='#projects' startIcon={<BrushIcon />}>
-              Freelance
-            </Button>
-            <Button color='inherit' href='#about'>
-              About
-            </Button>
-            <Button color='inherit' href='#contact'>
-              Contact Me
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </HideOnScroll>
-    </div>
+    <header>
+      <AppBar
+        className={scrollActive ? 'nav active' : 'nav'}
+        color={'transparent'}
+      >
+        {mobileView ? displayMobile() : displayDesktop()}
+      </AppBar>
+    </header>
   );
 };
 

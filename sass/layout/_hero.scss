@@ -1,18 +1,152 @@
 .hero {
-  min-height: 100vh;
-  filter: brightness(70%);
-  background-image: url('https://images.unsplash.com/photo-1531970227416-f0cddeb1f748?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100vh;
+  // filter: brightness(70%);
+  // background-image: url('https://images.unsplash.com/photo-1531970227416-f0cddeb1f748?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-
+  position: relative;
   &__title {
     font-size: 3rem;
+  }
+}
+
+.gallery {
+  filter: brightness(30%);
+
+  margin-top: 64px;
+  width: 100%;
+  height: 100%;
+  grid-column: full-start / full-end;
+  min-height: calc(100vh - 128px);
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  overflow: hidden;
+
+  @media only screen and (max-width: $bp-small) {
+    gap: 0.5rem;
+  }
+
+  &__item {
+    &--1 {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(https://images.unsplash.com/photo-1602525661773-c2f9406ff452?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80);
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 2;
+    }
+    &--2 {
+      background-image: url(https://live.staticflickr.com/65535/50653487697_91d41977e0_w.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: aqua;
+      grid-row: 1 / span 1;
+      grid-column: 3 / span 3;
+    }
+    &--3 {
+      background-image: url(https://live.staticflickr.com/65535/50654534531_85752db29d.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: aquamarine;
+      grid-row: 1 / span 4;
+      grid-column: 6 / span 2;
+    }
+    &--4 {
+      background-color: bisque;
+      grid-row: 1 / span 2;
+      grid-column: 8 / span 2;
+    }
+    &--5 {
+      background-image: url(https://live.staticflickr.com/65535/50653486897_fd15acd4a4_k.jpg);
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: black;
+      grid-row: 3 / span 4;
+      grid-column: 1 / span 2;
+    }
+    &--6 {
+      background-image: url(https://live.staticflickr.com/65535/50652659643_15b9487400_n.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      background-color: blue;
+      grid-row: 4 / span 2;
+      grid-column: 3 / span 2;
+    }
+    &--7 {
+      background-image: url(https://live.staticflickr.com/65535/50653396591_811b36523f_n.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: blueviolet;
+      grid-row: 4 / 5;
+      grid-column: 5 / 6;
+    }
+    &--8 {
+      background-color: brown;
+      grid-row: 3 / span 2;
+      grid-column: 8 / span 2;
+    }
+    &--9 {
+      background-color: cadetblue;
+      grid-row: 3 / span 3;
+    }
+    &--10 {
+      background-image: url(https://live.staticflickr.com/65535/50652660348_347d4ef929_w.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-color: chartreuse;
+      grid-row: 7 / span 2;
+      grid-column: 1 / span 3;
+    }
+    &--11 {
+      background-image: url(https://live.staticflickr.com/65535/50653397391_97a91cf512_w.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: chocolate;
+      grid-row: 6 / span 1;
+      grid-column: 3 / span 3;
+    }
+    &--12 {
+      background-image: url(https://live.staticflickr.com/65535/50653396541_981c15c2ee_k.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+      background-color: coral;
+      grid-row: 5 / span 4;
+      grid-column: 6 / span 2;
+    }
+    &--13 {
+      background-color: darkgreen;
+      background-image: url(https://live.staticflickr.com/65535/50652659293_73d0cabe9d_n.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      grid-row: 5 / span 1;
+      grid-column: 8 / span 3;
+    }
+    &--14 {
+      background-color: darkolivegreen;
+      grid-row: 6 / span 2;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    display: block;
   }
 }

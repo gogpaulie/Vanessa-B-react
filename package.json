@@ -13,6 +13,7 @@
     "postcss-scss": "^3.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-image-gallery": "^1.0.8",
     "react-lazy-hero": "^2.0.0",
     "react-scripts": "^4.0.1",

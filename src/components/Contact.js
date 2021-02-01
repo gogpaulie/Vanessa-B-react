@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import emailjs, { send } from 'emailjs-com';
+import emailjs from 'emailjs-com';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Contact = () => {
   const [messageSent, setMessageSent] = useState(false);
-
-  const sendBtn = document.getElementById('sendBtn');
+  const [recaptchaChecked, setRecaptchaChecked] = useState(false);
 
   const showLabel = (e) => {
     const name = document.getElementById('name');
@@ -28,26 +28,33 @@ const Contact = () => {
   };
 
   function sendEmail(e) {
-    e.preventDefault();
-    setMessageSent(true);
+    if (recaptchaChecked) {
+      e.preventDefault();
+      setMessageSent(true);
 
-    emailjs
-      .sendForm(
-        'service_tev9jzv',
-        'template_4kl84vq',
-        e.target,
-        'user_BaAAqPGltN6DwLfEHQAP1'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+      emailjs
+        .sendForm(
+          'service_tev9jzv',
+          'template_4kl84vq',
+          e.target,
+          'user_BaAAqPGltN6DwLfEHQAP1'
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
 
-    e.target.reset();
+      e.target.reset();
+    }
+  }
+
+  function onChange(value) {
+    console.log('Captcha value:', value);
+    setRecaptchaChecked(true);
   }
 
   // !messageSent ? (
@@ -58,7 +65,12 @@ const Contact = () => {
         Do you want to collaborate? Message me below and I'll get back to you
         ASAP!
       </p>
-      <form className='contact-form' onSubmit={sendEmail}>
+      <form
+        action='?'
+        method='POST'
+        className='contact-form'
+        onSubmit={sendEmail}
+      >
         <div className='contact-form__group'>
           <label className='contact-form__label' id='name'>
             Name
@@ -102,10 +114,17 @@ const Contact = () => {
             required
           />
         </div>
-        <div
+        {/* <div
           class='g-recaptcha'
           data-sitekey='6LfJ0UQaAAAAAEPE0zG07N_Xe5aEBd5E_WCoyneh'
-        ></div>
+          data-theme='dark'
+          data-expired-callback
+        ></div> */}
+        <ReCAPTCHA
+          className='g-recaptcha'
+          sitekey='6LfJ0UQaAAAAAEPE0zG07N_Xe5aEBd5E_WCoyneh'
+          onChange={onChange}
+        />
         <button className='contact-form__btn' id='sendBtn' type='submit'>
           {!messageSent ? 'send' : 'message sent! :)'}
         </button>

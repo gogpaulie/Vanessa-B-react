@@ -95,8 +95,12 @@ $ig-xsmall-screen: 480px !default;
     text-transform: uppercase;
 
     &:hover {
-      border-color: $color-primary;
+      filter: brightness(110%);
+      cursor: pointer;
     }
+  }
+  &__alert {
+    font-size: 3rem;
   }
 }
 

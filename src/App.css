@@ -695,7 +695,10 @@ body {
     padding: 10px 50px;
     text-transform: uppercase; }
     .contact-form__btn:hover {
-      border-color: #04473d; }
+      filter: brightness(110%);
+      cursor: pointer; }
+  .contact-form__alert {
+    font-size: 3rem; }
 
 .focus {
   opacity: 1;

@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Snackbar from '@material-ui/core/Snackbar';
-// import MuiAlert from '@material-ui/lab/Alert';
+import MuiAlert from '@material-ui/lab/Alert';
 
-// function Alert(props) {
-//   return <MuiAlert elevation={6} variant='filled' {...props} />;
-// }
+function Alert(props) {
+  return <MuiAlert elevation={6} variant='filled' {...props} />;
+}
 
 const Contact = () => {
-  const [messageSent, setMessageSent] = useState(false);
   const [recaptchaChecked, setRecaptchaChecked] = useState(false);
-  const [open, setOpen] = React.useState(false);
+  const [openCaptchaAlert, setOpenCaptchaAlert] = useState(false);
+  const [openSuccessAlert, setOpenSuccessAlert] = useState(false);
 
-  const handleClick = () => {
-    setOpen(true);
+  const showCaptchaAlert = () => {
+    setOpenCaptchaAlert(true);
+  };
+  const showSuccessAlert = () => {
+    setOpenSuccessAlert(true);
   };
 
   const handleClose = (event, reason) => {
@@ -22,7 +25,14 @@ const Contact = () => {
       return;
     }
 
-    setOpen(false);
+    setOpenCaptchaAlert(false);
+  };
+  const handleSuccessClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenSuccessAlert(false);
   };
 
   const showLabel = (e) => {
@@ -49,14 +59,14 @@ const Contact = () => {
   function sendEmail(e) {
     if (recaptchaChecked) {
       e.preventDefault();
-      setMessageSent(true);
+      showSuccessAlert();
 
       emailjs
         .sendForm(
-          'service_h1v4rte',
-          'template_h2s24zu',
+          'service_h1v4rteREMOVETHISTEXT',
+          'template_h2s24zuREMOVETHISTEXT',
           e.target,
-          'user_cToGxtXmC89Qc7EhGHS9z'
+          'user_cToGxtXmC89Qc7EhGHS9zREMOVETHISTEXT'
         )
         .then(
           (result) => {
@@ -69,7 +79,8 @@ const Contact = () => {
 
       e.target.reset();
     } else {
-      alert("Please prove you're not a robot");
+      e.preventDefault();
+      showCaptchaAlert();
     }
   }
 
@@ -130,28 +141,41 @@ const Contact = () => {
             required
           />
         </div>
-        {/* <div
-          class='g-recaptcha'
-          data-sitekey='6LfJ0UQaAAAAAEPE0zG07N_Xe5aEBd5E_WCoyneh'
-          data-theme='dark'
-          data-expired-callback
-        ></div> */}
         <ReCAPTCHA
           className='g-recaptcha'
           sitekey='6LfJ0UQaAAAAAEPE0zG07N_Xe5aEBd5E_WCoyneh'
           onChange={onChange}
         />
+        <Snackbar
+          open={openCaptchaAlert}
+          autoHideDuration={3000}
+          onClose={handleClose}
+        >
+          <Alert
+            style={{ fontSize: '1.2rem' }}
+            onClose={handleClose}
+            severity='warning'
+          >
+            Please complete the captcha!
+          </Alert>
+        </Snackbar>
+        <Snackbar
+          open={openSuccessAlert}
+          autoHideDuration={6000}
+          onClose={handleSuccessClose}
+        >
+          <Alert
+            style={{ fontSize: '1.2rem' }}
+            onClose={handleSuccessClose}
+            severity='success'
+          >
+            Message Sent! Talk to you soon! 😁
+          </Alert>
+        </Snackbar>
         <button className='contact-form__btn' id='sendBtn' type='submit'>
-          {!messageSent ? 'send' : 'message sent! :)'}
+          send
         </button>
       </form>
-      {/* <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity='warning'>
-          This is a success message!
-        </Alert>
-      </Snackbar>
-
-      <Alert severity='warning'>This is a warning message!</Alert> */}
     </div>
   );
 };

@@ -67,12 +67,7 @@ const Contact = () => {
         Do you want to collaborate? Message me below and I'll get back to you
         ASAP!
       </p>
-      <form
-        action='?'
-        method='POST'
-        className='contact-form'
-        onSubmit={sendEmail}
-      >
+      <form className='contact-form' onSubmit={sendEmail}>
         <div className='contact-form__group'>
           <label className='contact-form__label' id='name'>
             Name

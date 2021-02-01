@@ -102,6 +102,10 @@ const Contact = () => {
             required
           />
         </div>
+        <div
+          class='g-recaptcha'
+          data-sitekey='6LfJ0UQaAAAAAEPE0zG07N_Xe5aEBd5E_WCoyneh'
+        ></div>
         <button className='contact-form__btn' id='sendBtn' type='submit'>
           {!messageSent ? 'send' : 'message sent! :)'}
         </button>

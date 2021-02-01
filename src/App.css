@@ -707,3 +707,6 @@ textarea {
 .sent {
   background-color: #04473d;
   color: #fff; }
+
+.g-recaptcha {
+  margin: 0 auto 1rem auto; }

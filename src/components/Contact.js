@@ -1,10 +1,29 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from 'react-google-recaptcha';
+import Snackbar from '@material-ui/core/Snackbar';
+// import MuiAlert from '@material-ui/lab/Alert';
+
+// function Alert(props) {
+//   return <MuiAlert elevation={6} variant='filled' {...props} />;
+// }
 
 const Contact = () => {
   const [messageSent, setMessageSent] = useState(false);
   const [recaptchaChecked, setRecaptchaChecked] = useState(false);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const showLabel = (e) => {
     const name = document.getElementById('name');
@@ -34,10 +53,10 @@ const Contact = () => {
 
       emailjs
         .sendForm(
-          'service_tev9jzv',
-          'template_4kl84vq',
+          'service_h1v4rte',
+          'template_h2s24zu',
           e.target,
-          'user_BaAAqPGltN6DwLfEHQAP1'
+          'user_cToGxtXmC89Qc7EhGHS9z'
         )
         .then(
           (result) => {
@@ -126,6 +145,13 @@ const Contact = () => {
           {!messageSent ? 'send' : 'message sent! :)'}
         </button>
       </form>
+      {/* <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity='warning'>
+          This is a success message!
+        </Alert>
+      </Snackbar>
+
+      <Alert severity='warning'>This is a warning message!</Alert> */}
     </div>
   );
 };

@@ -63,10 +63,10 @@ const Contact = () => {
 
       emailjs
         .sendForm(
-          'service_h1v4rteREMOVETHISTEXT',
-          'template_h2s24zuREMOVETHISTEXT',
+          'service_h1v4rte',
+          'template_h2s24zu',
           e.target,
-          'user_cToGxtXmC89Qc7EhGHS9zREMOVETHISTEXT'
+          'user_cToGxtXmC89Qc7EhGHS9z'
         )
         .then(
           (result) => {

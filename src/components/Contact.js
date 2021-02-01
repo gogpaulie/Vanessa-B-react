@@ -49,6 +49,8 @@ const Contact = () => {
         );
 
       e.target.reset();
+    } else {
+      alert("Please prove you're not a robot");
     }
   }
 

@@ -44,8 +44,8 @@ function App() {
         <h1>Vanessa Brasfield</h1>
         <p>Graphic Design</p>
       </LazyHero>
-      <About />
       <Projects3 />
+      <About />
       <Contact />
       <footer className='footer'>
         &copy; Polihronakis Design {new Date().getFullYear()}

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../assets/logo.webp';
 import funky from '../assets/funky.jpg';
 import simon from '../assets/simon.png';
 import vanessa from '../assets/vanessa.PNG';

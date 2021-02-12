@@ -1,0 +1,100 @@
+// <div className='container'>
+//       <form className='login-form' onSubmit={submitHandler}>
+//         <div className='login-form__group'>
+//           <label className='login-form__label'>Email</label>
+//           <input
+//             className='login-form__control'
+//             type='email'
+//             placeholder='Enter Email'
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//           />
+//         </div>
+//         <div className='login-form__group'>
+//           <label className='login-form__label'>Password</label>
+//           <input
+//             className='login-form__control'
+//             type='password'
+//             placeholder='Enter Password'
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//           />
+//         </div>
+//         <button type='submit' className='login-form__btn'>
+//           Login
+//         </button>
+//       </form>
+//     </div>
+
+.login-screen {
+  height: 100vh;
+  background-image: url('https://images2.alphacoders.com/106/1066635.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  height: 500px;
+  width: 500px;
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba($color: black, $alpha: 0.9);
+  border-radius: 2rem;
+
+  & h2 {
+    font-size: 3rem;
+    color: red;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__label {
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem;
+  }
+
+  &__control {
+    width: 300px;
+    font-family: inherit;
+    margin-top: 1rem;
+    color: red;
+    padding: 1rem;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    padding: 1rem 4rem;
+    font-family: inherit;
+    font-weight: bold;
+    color: red;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}

@@ -13,12 +13,12 @@ const headersData = [
     href: '#home',
   },
   {
-    label: 'About',
-    href: '#about',
-  },
-  {
     label: 'Freelance',
     href: '#projects',
+  },
+  {
+    label: 'About',
+    href: '#about',
   },
   {
     label: 'Contact',
@@ -118,10 +118,10 @@ const Navbar = ({ scrollActive }) => {
               <a href='#home'>Home</a>
             </li>
             <li>
-              <a href='#about'>About</a>
+              <a href='#projects'>Freelance</a>
             </li>
             <li>
-              <a href='#projects'>Freelance</a>
+              <a href='#about'>About</a>
             </li>
             <li>
               <a href='#contact'>Contact</a>

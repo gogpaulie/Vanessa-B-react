@@ -5,7 +5,6 @@ export const imagesAvatars = [
       'https://live.staticflickr.com/65535/50689231196_2fe86774d0_t.jpg',
     fullscreen:
       'https://live.staticflickr.com/65535/50689231196_22eb18d4fe_o.png',
-    description: 'Render custom slides within the gallery',
   },
   {
     original: 'https://live.staticflickr.com/65535/50689231916_e79c830e18.jpg',
@@ -34,6 +33,18 @@ export const imagesAvatars = [
   //   fullscreen: `${process.env.PUBLIC_URL}/images/MLAvatars/Cyla2-watermark.png`,
   // },
 ];
+export const imagesAvatars2 = [
+  {
+    original: `${process.env.PUBLIC_URL}/images/sheekersFull.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/sheekersFull.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/sheekersFull.png`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/SasaNinjaChicken/the_chicken2.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/SasaNinjaChicken/the_chicken2.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/SasaNinjaChicken/the_chicken2.png`,
+  },
+];
 
 export const imagesPanels = [
   {
@@ -43,7 +54,6 @@ export const imagesPanels = [
       'https://live.staticflickr.com/65535/50688578543_0318400767_o.png',
     fullscreen:
       'https://live.staticflickr.com/65535/50688578543_0318400767_o.png',
-    description: 'Render custom slides within the gallery',
   },
   {
     original:
@@ -68,6 +78,11 @@ export const imagesPanels = [
       'https://live.staticflickr.com/65535/50689402762_1db06b7172_o.png',
     fullscreen:
       'https://live.staticflickr.com/65535/50689402762_1db06b7172_o.png',
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/panel-samples2.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/panel-samples2.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/panel-samples2.png`,
   },
 ];
 
@@ -79,7 +94,6 @@ export const imagesBadges = [
       'https://live.staticflickr.com/65535/50689447157_3db981ca42_o.png',
     fullscreen:
       'https://live.staticflickr.com/65535/50689447157_3db981ca42_o.png',
-    description: 'Render custom slides within the gallery',
   },
   {
     original:
@@ -139,7 +153,6 @@ export const imagesEmotes = [
       'https://live.staticflickr.com/65535/50688679058_7728b4d4d8_o.png',
     fullscreen:
       'https://live.staticflickr.com/65535/50688679058_7728b4d4d8_o.png',
-    description: 'Render custom slides within the gallery',
   },
   {
     original:
@@ -199,7 +212,6 @@ export const imagesOverlaysWaterDeep = [
       'https://live.staticflickr.com/65535/50688717783_750bc975c3_n.jpg',
     fullscreen:
       'https://live.staticflickr.com/65535/50688717783_748b7faf7c_o.png',
-    description: 'Render custom slides within the gallery',
   },
   {
     original:
@@ -224,6 +236,38 @@ export const imagesOverlaysWaterDeep = [
       'https://live.staticflickr.com/65535/50688715833_7ca78dd660_n.jpg',
     fullscreen:
       'https://live.staticflickr.com/65535/50688715833_3a5ec3b72b_o.png',
+  },
+];
+export const imagesOverlaysWaterDeep2 = [
+  {
+    original: `${process.env.PUBLIC_URL}/images/Rivals2/5.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Rivals2/5.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/Rivals2/5.png`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Rivals2/6.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Rivals2/6.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/Rivals2/6.png`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Rivals2/7.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Rivals2/7.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/Rivals2/7.png`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Rivals2/brb.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Rivals2/brb.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/Rivals2/brb.png`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Rivals2/ending.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Rivals2/ending.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/Rivals2/ending.png`,
+  },
+  {
+    original: `${process.env.PUBLIC_URL}/images/Rivals2/starting.png`,
+    thumbnail: `${process.env.PUBLIC_URL}/images/Rivals2/starting.png`,
+    fullscreen: `${process.env.PUBLIC_URL}/images/Rivals2/starting.png`,
   },
 ];
 

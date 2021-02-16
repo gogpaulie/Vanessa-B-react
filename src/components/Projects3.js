@@ -2,10 +2,12 @@ import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import {
   imagesAvatars,
+  imagesAvatars2,
   imagesPanels,
   imagesBadges,
   imagesEmotes,
   imagesOverlaysWaterDeep,
+  imagesOverlaysWaterDeep2,
   imagesOverlayVanessa,
 } from '../imgData/imageData';
 
@@ -34,13 +36,13 @@ const Projects3 = () => {
               slideInterval={5000}
             />
             <ImageGallery
-              items={imagesOverlayVanessa}
+              items={imagesOverlaysWaterDeep2}
               autoPlay={true}
               thumbnailPosition='right'
               slideInterval={5000}
             />
             <ImageGallery
-              items={imagesOverlaysWaterDeep}
+              items={imagesOverlayVanessa}
               autoPlay={true}
               thumbnailPosition='right'
               slideInterval={5000}
@@ -48,36 +50,55 @@ const Projects3 = () => {
           </div>
         </div>
 
-        <div className='gallery-container__gallery--small'>
-          <h1>Twitch Badges</h1>
-          <ImageGallery
-            items={imagesBadges}
-            thumbnailPosition='bottom'
-            showFullscreenButton={false}
-            autoPlay={true}
-            slideInterval={5000}
-          />
+        <div className='static-gallery'>
+          <h1>More Avatars</h1>
+          <div className='static-gallery__images--avatars2'>
+            {imagesAvatars2.map((image) => (
+              <img
+                key={image.fullscreen}
+                src={image.fullscreen}
+                alt='Twitch badge'
+              />
+            ))}
+          </div>
         </div>
 
-        <div className='gallery-container__gallery--small'>
-          <h1>Twitch Emotes</h1>
-          <ImageGallery
-            items={imagesEmotes}
-            thumbnailPosition='bottom'
-            showFullscreenButton={false}
-            autoPlay={true}
-            slideInterval={5000}
-          />
+        <div className='static-gallery'>
+          <h1>Twitch Badges</h1>
+          <div className='static-gallery__images'>
+            {imagesBadges.map((image) => (
+              <img
+                key={image.fullscreen}
+                src={image.fullscreen}
+                alt='Twitch badge'
+              />
+            ))}
+          </div>
         </div>
-        <div className='gallery-container__gallery'>
+
+        <div className='static-gallery'>
+          <h1>Twitch Emotes</h1>
+          <div className='static-gallery__images'>
+            {imagesEmotes.map((image) => (
+              <img
+                key={image.fullscreen}
+                src={image.fullscreen}
+                alt='Twitch emote'
+              />
+            ))}
+          </div>
+        </div>
+        <div className='static-gallery'>
           <h1>Twitch Panels</h1>
-          <ImageGallery
-            items={imagesPanels}
-            thumbnailPosition='right'
-            showFullscreenButton={false}
-            autoPlay={true}
-            slideInterval={5000}
-          />
+          <div className='static-gallery__images'>
+            {imagesPanels.map((image) => (
+              <img
+                key={image.fullscreen}
+                src={image.fullscreen}
+                alt='Twitch Panel'
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

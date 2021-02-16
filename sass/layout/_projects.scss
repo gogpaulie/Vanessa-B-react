@@ -41,6 +41,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
   @media (max-width: $ig-med-screen) {
     grid-template-columns: max-content;
+    margin-top: 0rem;
   }
 
   &__gallery {
@@ -56,19 +57,6 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
       margin: 0 auto;
     }
 
-    &--small {
-      width: 400px;
-      height: 300px;
-
-      @media (max-width: $ig-small-screen) {
-        width: 400px;
-        margin: 0 auto;
-      }
-      @media (max-width: $ig-xsmall-screen) {
-        width: 300px;
-        margin: 0 auto;
-      }
-    }
     &--overlays {
       display: flex;
       flex-direction: column;
@@ -84,6 +72,29 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
     font-size: 3rem;
     text-align: center;
     margin: 3rem 0;
+  }
+}
+
+.static-gallery {
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    & img {
+      margin: 1rem;
+      @media (max-width: $ig-xsmall-screen) {
+        width: 300px;
+      }
+    }
+    &--avatars2 img {
+      width: 550px;
+      @media (max-width: $ig-med-screen) {
+        display: flex;
+      }
+      @media (max-width: $ig-xsmall-screen) {
+        width: 300px;
+      }
+    }
   }
 }
 

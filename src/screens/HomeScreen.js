@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import LazyHero from 'react-lazy-hero';
-import Navbar from '../components/Navbar';
+import Navbar2 from '../components/Navbar2';
 import Projects3 from '../components/Projects3';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import NavbarMobileDrawer from '../components/NavbarMobileDrawer';
 
 const HomeScreen = () => {
   const [scrollActive, setScrollActive] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [openNav, setOpenNav] = useState(false);
 
   function handleScroll() {
     if (window.scrollY > 300) {
@@ -16,12 +19,33 @@ const HomeScreen = () => {
     }
   }
 
+  function handleResize() {
+    if (window.innerWidth <= 990) {
+      setIsMobileView(true);
+    } else {
+      setIsMobileView(false);
+    }
+  }
+
+  function handleOpen() {
+    setOpenNav(!openNav);
+  }
+
   useEffect(() => {
+    handleResize();
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
   });
   return (
     <div className='App' id='home'>
-      <Navbar scrollActive={scrollActive} />
+      <NavbarMobileDrawer open={openNav} handleOpen={handleOpen} />
+      <Navbar2
+        scrollActive={scrollActive}
+        isMobileView={isMobileView}
+        handleOpen={handleOpen}
+        open={openNav}
+      />
+
       <LazyHero
         className='hero'
         isCentered={true}
@@ -36,7 +60,6 @@ const HomeScreen = () => {
       >
         <h1>Vanessa Brasfield</h1>
         <p>Graphic Design</p>
-        <small>Under Construction 🧡🧡🧡</small>
       </LazyHero>
       <Projects3 />
       <About />

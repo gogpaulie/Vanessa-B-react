@@ -15,7 +15,7 @@ body {
   font-family: "Nunito", sans-serif; }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 5rem; }
   @media (max-width: 768px) {
@@ -27,6 +27,45 @@ body {
   padding: 2rem 0;
   font-size: 1.5rem;
   background-color: #ccc; }
+
+.drawer {
+  position: fixed;
+  top: -20px;
+  background-color: #04473d;
+  height: calc(100% + 20px);
+  width: 60vw;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-200%);
+  transition: transform 0.3s ease-in-out; }
+  .drawer__list {
+    list-style: none;
+    margin-top: 3rem;
+    width: 100%;
+    text-align: center; }
+    .drawer__list--link {
+      margin: 2rem 0;
+      padding: 1rem 0;
+      transition: all 0.2s; }
+      .drawer__list--link a {
+        text-decoration: none;
+        color: white;
+        font-size: 2.5rem;
+        padding: 1rem 0; }
+      .drawer__list--link:hover {
+        background-color: white; }
+        .drawer__list--link:hover a {
+          color: #333; }
+  .drawer__social-media {
+    font-size: 3rem; }
+    .drawer__social-media i {
+      margin: 0 1rem;
+      color: white; }
+
+.drawer.open {
+  transform: translateX(0); }
 
 .nav {
   position: fixed;
@@ -45,9 +84,11 @@ body {
       .nav__logo img {
         height: 60px;
         width: 60px; } }
-  .nav__drawer-links {
-    text-decoration: none;
-    color: #04473d; }
+  .nav i {
+    font-size: 3rem;
+    margin-right: 3rem;
+    cursor: pointer;
+    color: white; }
 
 .nav .container {
   display: flex;
@@ -322,7 +363,8 @@ body {
   flex-wrap: wrap;
   justify-content: center; }
   .static-gallery__images img {
-    margin: 1rem; }
+    object-fit: contain;
+    margin: 0.75rem; }
     @media (max-width: 480px) {
       .static-gallery__images img {
         width: 300px; } }

@@ -79,9 +79,11 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
   &__images {
     display: flex;
     flex-wrap: wrap;
+
     justify-content: center;
     & img {
-      margin: 1rem;
+      object-fit: contain;
+      margin: 0.75rem;
       @media (max-width: $ig-xsmall-screen) {
         width: 300px;
       }

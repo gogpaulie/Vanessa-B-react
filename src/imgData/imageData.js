@@ -95,14 +95,7 @@ export const imagesBadges = [
     fullscreen:
       'https://live.staticflickr.com/65535/50689447157_3db981ca42_o.png',
   },
-  {
-    original:
-      'https://live.staticflickr.com/65535/50688616503_8302d8859c_o.png',
-    thumbnail:
-      'https://live.staticflickr.com/65535/50688616503_8302d8859c_o.png',
-    fullscreen:
-      'https://live.staticflickr.com/65535/50688616503_8302d8859c_o.png',
-  },
+
   {
     original:
       'https://live.staticflickr.com/65535/50688615928_8fb8604ebd_o.png',
@@ -113,11 +106,20 @@ export const imagesBadges = [
   },
   {
     original:
-      'https://live.staticflickr.com/65535/50689362751_e7c616535f_o.png',
+      'https://live.staticflickr.com/65535/50688614098_54ee45e3d1_o.png',
     thumbnail:
-      'https://live.staticflickr.com/65535/50689362751_e7c616535f_o.png',
+      'https://live.staticflickr.com/65535/50688614098_54ee45e3d1_o.png',
     fullscreen:
-      'https://live.staticflickr.com/65535/50689362751_e7c616535f_o.png',
+      'https://live.staticflickr.com/65535/50688614098_54ee45e3d1_o.png',
+  },
+
+  {
+    original:
+      'https://live.staticflickr.com/65535/50689359316_2af9849df7_o.png',
+    thumbnail:
+      'https://live.staticflickr.com/65535/50689359316_2af9849df7_o.png',
+    fullscreen:
+      'https://live.staticflickr.com/65535/50689359316_2af9849df7_o.png',
   },
   {
     original:
@@ -129,19 +131,20 @@ export const imagesBadges = [
   },
   {
     original:
-      'https://live.staticflickr.com/65535/50689359316_2af9849df7_o.png',
+      'https://live.staticflickr.com/65535/50689362751_e7c616535f_o.png',
     thumbnail:
-      'https://live.staticflickr.com/65535/50689359316_2af9849df7_o.png',
+      'https://live.staticflickr.com/65535/50689362751_e7c616535f_o.png',
     fullscreen:
-      'https://live.staticflickr.com/65535/50689359316_2af9849df7_o.png',
+      'https://live.staticflickr.com/65535/50689362751_e7c616535f_o.png',
   },
+
   {
     original:
-      'https://live.staticflickr.com/65535/50688614098_54ee45e3d1_o.png',
+      'https://live.staticflickr.com/65535/50688616503_8302d8859c_o.png',
     thumbnail:
-      'https://live.staticflickr.com/65535/50688614098_54ee45e3d1_o.png',
+      'https://live.staticflickr.com/65535/50688616503_8302d8859c_o.png',
     fullscreen:
-      'https://live.staticflickr.com/65535/50688614098_54ee45e3d1_o.png',
+      'https://live.staticflickr.com/65535/50688616503_8302d8859c_o.png',
   },
 ];
 

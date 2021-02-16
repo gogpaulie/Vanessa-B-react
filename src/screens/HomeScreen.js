@@ -36,6 +36,7 @@ const HomeScreen = () => {
       >
         <h1>Vanessa Brasfield</h1>
         <p>Graphic Design</p>
+        <small>Under Construction 🧡🧡🧡</small>
       </LazyHero>
       <Projects3 />
       <About />

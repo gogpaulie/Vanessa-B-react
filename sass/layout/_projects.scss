@@ -31,6 +31,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
 .gallery-container {
   margin-top: 10rem;
+
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
@@ -44,7 +45,7 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
 
   &__gallery {
     width: 500px;
-    // min-height: 500px;
+    // height: 1000px;
 
     @media (max-width: $ig-small-screen) {
       width: 400px;
@@ -68,7 +69,12 @@ $ig-transparent: rgba(0, 0, 0, 0) !default;
         margin: 0 auto;
       }
     }
-
+    &--overlays {
+      display: flex;
+      flex-direction: column;
+      height: 75%;
+      justify-content: space-between;
+    }
     &:last-child {
       margin: 20rem 0;
     }

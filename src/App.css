@@ -315,6 +315,11 @@ body {
         .gallery-container__gallery--small {
           width: 300px;
           margin: 0 auto; } }
+    .gallery-container__gallery--overlays {
+      display: flex;
+      flex-direction: column;
+      height: 75%;
+      justify-content: space-between; }
     .gallery-container__gallery:last-child {
       margin: 20rem 0; }
   .gallery-container h1 {

@@ -690,12 +690,17 @@ body {
     color: white;
     margin-bottom: 4rem; }
   .form-container__subtitle {
+    text-align: center;
     color: white;
     font-size: 2.5rem;
     margin-bottom: 2rem; }
     @media (max-width: 768px) {
       .form-container__subtitle {
         font-size: 2rem; } }
+  .form-container__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
 
 .contact-form {
   margin-top: 4rem;

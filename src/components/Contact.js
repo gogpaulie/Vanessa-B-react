@@ -12,6 +12,7 @@ const Contact = () => {
   const [recaptchaChecked, setRecaptchaChecked] = useState(false);
   const [openCaptchaAlert, setOpenCaptchaAlert] = useState(false);
   const [openSuccessAlert, setOpenSuccessAlert] = useState(false);
+  const [commissionsOpen] = useState(false);
 
   const showCaptchaAlert = () => {
     setOpenCaptchaAlert(true);
@@ -93,89 +94,97 @@ const Contact = () => {
   return (
     <div className='form-container' id='contact'>
       <h1 className='form-container__title'>Contact Me</h1>
-      <p className='form-container__subtitle'>
-        Do you want to collaborate? Message me below and I'll get back to you
-        ASAP!
-      </p>
-      <form className='contact-form' onSubmit={sendEmail}>
-        <div className='contact-form__group'>
-          <label className='contact-form__label' id='name'>
-            Name
-          </label>
-          <input
-            className='contact-form__control'
-            placeholder='Jane Doe'
-            type='text'
-            onFocus={showLabel}
-            onBlur={hideLabel}
-            name='user_name'
-            required
-          />
+      {commissionsOpen ? (
+        <div className='form-container__form'>
+          <p className='form-container__subtitle'>
+            Do you want to collaborate? Message me below and I'll get back to
+            you ASAP!
+          </p>
+          <form className='contact-form' onSubmit={sendEmail}>
+            <div className='contact-form__group'>
+              <label className='contact-form__label' id='name'>
+                Name
+              </label>
+              <input
+                className='contact-form__control'
+                placeholder='Jane Doe'
+                type='text'
+                onFocus={showLabel}
+                onBlur={hideLabel}
+                name='user_name'
+                required
+              />
+            </div>
+            <div className='contact-form__group'>
+              <label className='contact-form__label' id='email'>
+                Email
+              </label>
+              <input
+                className='contact-form__control'
+                placeholder='jane@doe.com'
+                type='email'
+                name='user_email'
+                onFocus={showLabel}
+                onBlur={hideLabel}
+                required
+              />
+            </div>
+            <div className='contact-form__group'>
+              <label className='contact-form__label' id='message'>
+                Message
+              </label>
+              <textarea
+                className='contact-form__control'
+                rows='5'
+                cols='50'
+                placeholder='Enter Message...'
+                name='message'
+                onFocus={showLabel}
+                onBlur={hideLabel}
+                required
+              />
+            </div>
+            <ReCAPTCHA
+              className='g-recaptcha'
+              sitekey='6LfJ0UQaAAAAAEPE0zG07N_Xe5aEBd5E_WCoyneh'
+              onChange={onChange}
+            />
+            <Snackbar
+              open={openCaptchaAlert}
+              autoHideDuration={3000}
+              onClose={handleClose}
+            >
+              <Alert
+                style={{ fontSize: '1.2rem' }}
+                onClose={handleClose}
+                severity='warning'
+              >
+                Please complete the captcha!
+              </Alert>
+            </Snackbar>
+            <Snackbar
+              open={openSuccessAlert}
+              autoHideDuration={6000}
+              onClose={handleSuccessClose}
+            >
+              <Alert
+                style={{ fontSize: '1.2rem' }}
+                onClose={handleSuccessClose}
+                severity='success'
+              >
+                Message Sent! Talk to you soon! 😁
+              </Alert>
+            </Snackbar>
+            <button className='contact-form__btn' id='sendBtn' type='submit'>
+              send
+            </button>
+          </form>
         </div>
-        <div className='contact-form__group'>
-          <label className='contact-form__label' id='email'>
-            Email
-          </label>
-          <input
-            className='contact-form__control'
-            placeholder='jane@doe.com'
-            type='email'
-            name='user_email'
-            onFocus={showLabel}
-            onBlur={hideLabel}
-            required
-          />
-        </div>
-        <div className='contact-form__group'>
-          <label className='contact-form__label' id='message'>
-            Message
-          </label>
-          <textarea
-            className='contact-form__control'
-            rows='5'
-            cols='50'
-            placeholder='Enter Message...'
-            name='message'
-            onFocus={showLabel}
-            onBlur={hideLabel}
-            required
-          />
-        </div>
-        <ReCAPTCHA
-          className='g-recaptcha'
-          sitekey='6LfJ0UQaAAAAAEPE0zG07N_Xe5aEBd5E_WCoyneh'
-          onChange={onChange}
-        />
-        <Snackbar
-          open={openCaptchaAlert}
-          autoHideDuration={3000}
-          onClose={handleClose}
-        >
-          <Alert
-            style={{ fontSize: '1.2rem' }}
-            onClose={handleClose}
-            severity='warning'
-          >
-            Please complete the captcha!
-          </Alert>
-        </Snackbar>
-        <Snackbar
-          open={openSuccessAlert}
-          autoHideDuration={6000}
-          onClose={handleSuccessClose}
-        >
-          <Alert
-            style={{ fontSize: '1.2rem' }}
-            onClose={handleSuccessClose}
-            severity='success'
-          >
-            Message Sent! Talk to you soon! 😁
-          </Alert>
-        </Snackbar>
-        <button className='contact-form__btn' id='sendBtn' type='submit'>
-          send
-        </button>
-      </form>
+      ) : (
+        <p className='form-container__subtitle'>
+          Sorry, commissions are currently closed. Please check again later!
+        </p>
+      )}
     </div>
   );
 };

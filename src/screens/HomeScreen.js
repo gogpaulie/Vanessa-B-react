@@ -58,7 +58,7 @@ const HomeScreen = () => {
           color: 'white',
         }}
       >
-        <h1>Vanessa Brasfield</h1>
+        <h1>Ms Vanessa B</h1>
         <p>Graphic Design</p>
       </LazyHero>
       <Projects3 />

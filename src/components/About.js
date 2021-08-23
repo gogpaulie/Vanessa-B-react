@@ -34,12 +34,12 @@ function About() {
           </div>
 
           <p className='about__card--desc'>
-            Vanessa "PleasantlyTwstd" Brasfield has been involved in creative
-            endeavors since the age of 7. Her original career path was for video
-            game character concept and design, which then forked to data
-            analytics and research. Her passions include art, design, color
-            theory, crunching numbers, activism, charity, and challenge
-            runs/speed runs on Twitch.
+            Vanessa "PleasantlyTwstd" has been involved in creative endeavors
+            since the age of 7. Her original career path was for video game
+            character concept and design, which then forked to data analytics
+            and research. Her passions include art, design, color theory,
+            crunching numbers, activism, charity, and challenge runs/speed runs
+            on Twitch.
           </p>
         </div>
         <div className='about__card'>
